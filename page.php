@@ -1,0 +1,1 @@
+//static pages (not blog posts/shopping)
