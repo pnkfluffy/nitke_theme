@@ -6,6 +6,14 @@ html {
   color: #1f1f1f;
 }
 
+a:-webkit-any-link {
+  cursor: pointer;
+}
+
+a h1 p div {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
 body {
   display: flex;
   flex-direction: row;
@@ -32,34 +40,49 @@ body {
   margin-bottom: 20px;
 }
 
-.navbar-nitke {
+.fixed-navbar {
+  position: fixed;
+  width: 210px;
+}
+.fixed-navbar .navbar_title {
+  color: #910808;
+  font-size: 44px;
+}
+.fixed-navbar .navbar-nitke {
   list-style-type: none;
   padding-inline-start: 0;
+  font-size: 14px;
 }
-.navbar-nitke li {
+.fixed-navbar .navbar-nitke li {
   margin-bottom: 6px;
 }
-.navbar-nitke li.active a {
+.fixed-navbar .navbar-nitke li.active a {
   color: #910808;
 }
-.navbar-nitke li.active ul {
+.fixed-navbar .navbar-nitke li.active ul {
   display: block !important;
 }
-.navbar-nitke li a {
+.fixed-navbar .navbar-nitke li a {
   text-decoration: none;
   color: #1f1f1f;
 }
-.navbar-nitke li ul {
+.fixed-navbar .navbar-nitke li ul {
   list-style-type: none;
   padding-left: 0;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin: 8px 0 8px 4px;
   display: none;
 }
-.navbar-nitke li .dropdown-menu {
+.fixed-navbar .navbar-nitke li .dropdown-menu {
   border: none;
   padding: 0;
   min-width: 0;
+  position: relative !important;
+  transform: none !important;
+  font-size: 14px;
+}
+
+[class~=menu-item-object-post]:last-of-type {
+  margin-bottom: 12px;
 }
 
 /*================
@@ -175,6 +198,7 @@ body {
 .gallery-nav-father .gallery-nav-container .title {
   margin-bottom: 5px;
   font-style: italic;
+  font-size: 14px;
 }
 .gallery-nav-father .gallery-nav-container .gallery-nav-icon {
   text-decoration: none;
@@ -183,6 +207,22 @@ body {
 }
 .gallery-nav-father .gallery-nav-container .gallery-nav-icon.active {
   color: #222;
+}
+.gallery-nav-father .gallery-nav-container .to-thumbnail-view {
+  color: #666;
+  font-size: 14px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+#thumbnail-view {
+  width: 100%;
+  display: none;
+}
+#thumbnail-view .image-thumbnail {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=nitke.css.map */

@@ -7,6 +7,10 @@ html {
   color: #1f1f1f;
 }
 
+a:-webkit-any-link {
+  cursor: pointer;
+}
+
 body {
   display: flex;
   flex-direction: row;
@@ -33,37 +37,55 @@ body {
     margin-bottom: 20px;
   }
 }
-
-.navbar-nitke {
-  list-style-type: none;
-  padding-inline-start: 0;
-  li {
-    margin-bottom: 6px;
-    &.active {
-      a {
-        color: #910808;
-      }
-      ul {
-        display: block !important;
-      }
-    }
-    a {
-      text-decoration: none;
-      color: #1f1f1f;
-    }
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-      margin-top: 12px;
-      margin-bottom: 12px;
-      display: none;
-    }
-    .dropdown-menu {
-      border: none;
-      padding: 0;
-      min-width: 0;
+.fixed-navbar {
+  position: fixed;
+  width: 210px;
+  a {
+    text-decoration: none;
+    .navbar_title {
+      color: #910808;
+      font-size: 44px;
+      margin-bottom: 30px;
+      line-height: 1.3em;
     }
   }
+  .navbar-nitke {
+    list-style-type: none;
+    padding-inline-start: 0;
+    font-size: 14px;
+    li {
+      margin-bottom: 6px;
+      &.active {
+        a {
+          color: #910808;
+        }
+        ul {
+          display: block !important;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: #1f1f1f;
+      }
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 8px 0 8px 4px;
+        display: none;
+      }
+      .dropdown-menu {
+        border: none;
+        padding: 0;
+        min-width: 0;
+        position: relative !important;
+        transform: none !important;
+        font-size: 14px;
+      }
+    }
+  }
+}
+[class~="menu-item-object-post"]:last-of-type {
+  margin-bottom: 12px;
 }
 
 /*================
@@ -183,6 +205,7 @@ body {
     .title {
       margin-bottom: 5px;
       font-style: italic;
+      font-size: 14px;
     }
     .gallery-nav-icon {
       text-decoration: none;
@@ -192,5 +215,21 @@ body {
         color: #222;
       }
     }
+    .to-thumbnail-view {
+      color: #666;
+      font-size: 14px;
+      margin-top: 12px;
+      cursor: pointer;
+    }
+  }
+}
+
+#thumbnail-view {
+  width: 100%;
+  display: none;
+  .image-thumbnail {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
   }
 }

@@ -19,17 +19,22 @@ wp_title();?></title>
 </head>
 
 <body <?php body_class();?>>
-        <div class="navbar">
-            <div class="navbar_title">
-                <!-- <?php
-esc_attr(get_option('first_name'));
-esc_attr(get_option('last_name'));
-?> -->
-            </div>
-            <div class="navbar_container navbar_galleries">
-            </div>
-            <div class="navbar_container navbar_menu">
-                <?php
+    <div class="navbar"></div>
+    <div class="fixed-navbar">
+        <a href="/">
+        <h1 class="navbar_title">
+            <?php
+$firstName = esc_attr(get_option('first_name'));
+$lastName = esc_attr(get_option('last_name'));
+$fullName = strtoupper($firstName . ' ' . $lastName);
+print $fullName;
+?>
+</h1>
+        </a>
+        <div class="navbar_container navbar_galleries">
+        </div>
+        <div class="navbar_container navbar_menu">
+            <?php
 wp_nav_menu(array(
     'theme_location' => 'primary',
     'container' => false,
@@ -37,5 +42,5 @@ wp_nav_menu(array(
     'walker' => new Nitke_Walker_Nav_Primary,
 ))
 ?>
-            </div>
+        </div>
     </div>

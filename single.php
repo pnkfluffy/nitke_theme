@@ -15,9 +15,6 @@ get_header();?>
 
     ?>
 <?php
-    //    currently jittery due to refresh on href, can be made smoother
-    //    or with transition by using session or javascript
-    //    https://stackoverflow.com/questions/13209181/increase-by-one-a-variable-every-time-you-push-a-button-php
     function get_current($change, $current, $attachments)
 {
         $current += $change;
@@ -25,13 +22,13 @@ get_header();?>
         if ($newcurrent < 0) {
             $newcurrent = count($attachments) - 1;
         }
-
+        $current = $newcurrent;
         return ($newcurrent);
     }
     ?>
 <div id="primary" class="content-area">
     <main id="main" class="single-container" role="main">
-        <div id="gallery-<?php the_ID();?>" class="gallery-container carousel slide" data-ride="carousel">
+        <div id="gallery-view" class="gallery-container carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <?php
     $index = 0;
@@ -57,10 +54,10 @@ get_header();?>
                 </div>
             </div>
         </div>
-        <div class="gallery-nav-father">
+        <div id="gallery-nav-father" class="gallery-nav-father">
             <div class="gallery-nav-container">
                 <div class="title">
-                    hi there
+                    <?php echo $attachments[$current]->post_excerpt; ?>
                 </div>
                 <div class="gallery-navigation">
                     <?php
@@ -75,12 +72,48 @@ get_header();?>
                             <circle cx="8" cy="8" r="8" />
                         </svg>
                     </a>
+                    <!-- THIS COMMENTED OUT CODE IS THE START
+				                    OF TRYING TO GET THIS TO WORK IN JAVASCRIPT
+				                    INSTEAD OF PHP --!>
+				                    <!-- <a class="gallery-nav-icon<?php echo $nav_active; ?>" onClick="changePage(<?php echo $nav_index ?>)"
+				                        role="button">
+				                        <svg width="4px" height="4px" viewBox="0 0 16 16" class="bi bi-circle-fill" fill="currentColor"
+				                            xmlns="http://www.w3.org/2000/svg">
+				                            <circle cx="8" cy="8" r="8" />
+				                        </svg>
+		                            </a>
+		                            <script>
+		                            function changePage(pageNum) {
+		                                console.log("hi", pageNum);
+		                                window.history.replaceState(null, null, `?img_id=${pageNum}`);
+		                            }
+		                            </script> -->
                     <?php $nav_index++;endforeach;?>
+                </div>
+                <div class="to-thumbnail-view" onClick="toThumbnail()">
+                    SHOW THUMBNAILS
                 </div>
             </div>
         </div>
+        <div id="thumbnail-view">
+            <?php
+    foreach ($attachments as $attachment):
+    ?>
+            <img class="image-thumbnail" src=<?php echo wp_get_attachment_url($attachment->ID); ?> />
+            <?php $index++;endforeach;?>
+        </div>
     </main>
 </div>
+
+<script>
+function toThumbnail() {
+    document.getElementById('gallery-view').style.display = "none";
+    document.getElementById('gallery-nav-father').style.display = "none";
+    document.getElementById('thumbnail-view').style.display = 'block';
+}
+</script>
+
+
 
 <?php endif;?>
 <?php get_footer();?>
