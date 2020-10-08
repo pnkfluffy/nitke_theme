@@ -30,7 +30,7 @@ function nitke_load_scripts()
 {
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '4.5.2', 'all');
 
-    wp_register_style('nitke_css', get_template_directory_uri() . '/css/nitke.css', array(), '1.0.0', 'all');
+    wp_register_style('nitke_css', get_template_directory_uri() . '/css/buggy/nitke.css', array(), '1.0.0', 'all');
     wp_enqueue_style('nitke_css');
 
     wp_deregister_script('jquery');

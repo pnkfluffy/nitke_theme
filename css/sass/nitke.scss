@@ -18,8 +18,9 @@ body {
 }
 
 #primary {
+  max-width: calc(100vw - 310px);
   flex: 1;
-  padding: 17px;
+  padding: 20px 30px 20px 40px;
 }
 
 /*================
@@ -97,9 +98,11 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-top: 30px;
   .post {
     width: 45%;
+    margin-bottom: 20px;
     .post-link {
       text-decoration: none;
       color: #1f1f1f;
@@ -156,6 +159,8 @@ body {
     position: absolute;
     height: calc(100vh - 134px);
     display: flex;
+    margin-left: 40px;
+    width: calc(100%-40px);
     align-items: center;
     .gallery-featured {
       width: 100%;
@@ -227,9 +232,32 @@ body {
 #thumbnail-view {
   width: 100%;
   display: none;
-  .image-thumbnail {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1vmin;
+    list-style-type: none;
+    padding: 0;
+    li {
+      height: 30vh;
+      flex-grow: 1;
+      margin: 1vmin;
+      cursor: pointer;
+      &:last-child {
+        flex-grow: 10;
+      }
+      .image-thumbnail {
+        max-height: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        vertical-align: bottom;
+      }
+      // .image-thumbnail {
+      //   width: 100%;
+      //   height: auto;
+      //   margin-bottom: 10px;
+      // }
+    }
   }
 }

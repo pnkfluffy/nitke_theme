@@ -10,10 +10,6 @@ a:-webkit-any-link {
   cursor: pointer;
 }
 
-a h1 p div {
-  font-family: Arial, Helvetica, sans-serif !important;
-}
-
 body {
   display: flex;
   flex-direction: row;
@@ -21,8 +17,9 @@ body {
 }
 
 #primary {
+  max-width: calc(100vw - 310px);
   flex: 1;
-  padding: 17px;
+  padding: 20px 30px 20px 40px;
 }
 
 /*================
@@ -44,9 +41,14 @@ body {
   position: fixed;
   width: 210px;
 }
-.fixed-navbar .navbar_title {
+.fixed-navbar a {
+  text-decoration: none;
+}
+.fixed-navbar a .navbar_title {
   color: #910808;
   font-size: 44px;
+  margin-bottom: 30px;
+  line-height: 1.3em;
 }
 .fixed-navbar .navbar-nitke {
   list-style-type: none;
@@ -93,10 +95,12 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-top: 30px;
 }
 .home-container .post {
   width: 45%;
+  margin-bottom: 20px;
 }
 .home-container .post .post-link {
   text-decoration: none;
@@ -152,6 +156,8 @@ body {
   position: absolute;
   height: calc(100vh - 134px);
   display: flex;
+  margin-left: 40px;
+  width: calc(100%-40px);
   align-items: center;
 }
 .gallery-container .carousel-inner .gallery-featured {
@@ -219,10 +225,28 @@ body {
   width: 100%;
   display: none;
 }
-#thumbnail-view .image-thumbnail {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+#thumbnail-view ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1vmin;
+  list-style-type: none;
+  padding: 0;
+}
+#thumbnail-view ul li {
+  height: 30vh;
+  flex-grow: 1;
+  margin: 1vmin;
+  cursor: pointer;
+}
+#thumbnail-view ul li:last-child {
+  flex-grow: 10;
+}
+#thumbnail-view ul li .image-thumbnail {
+  max-height: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
 }
 
 /*# sourceMappingURL=nitke.css.map */
