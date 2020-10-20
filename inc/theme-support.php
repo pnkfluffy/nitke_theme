@@ -47,11 +47,6 @@ function nitke_get_attachment()
         'post_parent' => get_the_ID(),
     )));
 
-    // echo '<pre>';
-    // print_r(get_the_ID());
-    // print_r($attachments);
-    // echo '</pre>';
-
     if ($attachments):
         foreach ($attachments as $attachment):
             $output = wp_get_attachment_url($attachment->ID);
