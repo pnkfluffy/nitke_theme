@@ -6,6 +6,14 @@ html {
   color: #1f1f1f;
 }
 
+h1, h2, h3, h4 {
+  color: #910808;
+}
+
+h1 {
+  font-size: 30px;
+}
+
 a:-webkit-any-link {
   cursor: pointer;
 }
@@ -62,9 +70,6 @@ body {
 .fixed-navbar .navbar-nitke li.active a {
   color: #910808;
 }
-.fixed-navbar .navbar-nitke li.active ul {
-  display: block !important;
-}
 .fixed-navbar .navbar-nitke li a {
   text-decoration: none;
   color: #1f1f1f;
@@ -77,10 +82,10 @@ body {
   border: none;
   min-width: 0;
   background-color: rgba(0, 0, 0, 0) !important;
-  position: relative !important;
   transform: none !important;
 }
 .fixed-navbar .navbar-nitke li .dropdown-menu.show {
+  position: relative !important;
   display: block;
 }
 
