@@ -5,6 +5,11 @@ html {
   font-family: Arial, Helvetica, sans-serif;
   color: #1f1f1f;
 }
+@media (max-width: 767px) {
+  html {
+    overflow-x: hidden;
+  }
+}
 
 h1, h2, h3, h4 {
   color: #910808;
@@ -18,16 +23,37 @@ a:-webkit-any-link {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: grey;
+  text-decoration: none;
+}
+
 body {
   display: flex;
   flex-direction: row;
   padding: 50px;
 }
+@media (max-width: 767px) {
+  body {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
 
 #primary {
   max-width: calc(100vw - 310px);
   flex: 1;
-  padding: 20px 30px 20px 40px;
+  padding: 20px 30px 20px 50px;
+}
+@media (max-width: 767px) {
+  #primary {
+    max-width: 100vw;
+    padding: 20px;
+  }
 }
 
 /*================
@@ -41,14 +67,35 @@ body {
   align-items: flex-start;
   padding: 0;
 }
+@media (max-width: 767px) {
+  .navbar {
+    display: none;
+  }
+}
 .navbar div {
   margin-bottom: 20px;
 }
 
 .fixed-navbar {
   position: fixed;
-  width: 210px;
+  width: 310px;
   z-index: 10;
+  left: 0;
+  top: 0;
+  padding-top: 50px;
+  padding-left: 50px;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+@media (max-width: 767px) {
+  .fixed-navbar {
+    background-color: rgba(0, 0, 0, 0);
+    height: 120px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-top: 20px;
+    position: relative;
+  }
 }
 .fixed-navbar a {
   text-decoration: none;
@@ -69,6 +116,9 @@ body {
 }
 .fixed-navbar .navbar-nitke li.active a {
   color: #910808;
+}
+.fixed-navbar .navbar-nitke li.active ul {
+  display: block;
 }
 .fixed-navbar .navbar-nitke li a {
   text-decoration: none;
@@ -229,6 +279,7 @@ body {
 
 .gallery-nav-father {
   position: relative;
+  z-index: 100;
 }
 .gallery-nav-father .gallery-nav-container {
   position: fixed;
@@ -284,6 +335,60 @@ body {
   max-width: 100%;
   object-fit: cover;
   vertical-align: bottom;
+}
+
+.mob-menu-icon {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-gallery-area {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.mobile-gallery-area ul {
+  margin: 0 !important;
+}
+.mobile-gallery-area ul li {
+  margin: 20px 0 5px 0 !important;
+}
+
+/*================
+  PAGES
+================*/
+.page-main {
+  max-width: 1000px;
+}
+.page-main .entry-title {
+  margin: 30px auto 50px;
+}
+
+/*================
+  WOOCOMMERCE
+================*/
+.woocommerce .woocommerce-input-wrapper {
+  width: 100%;
+  display: block;
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+  padding: 0.25rem;
+  height: 30px;
+  border: 1px solid #999 !important;
+  background: #f0f0f0;
+  border: 0;
+}
+
+.woocommerce-billing-fields .form-row, .woocommerce-shipping-fields .form-row, .woocommerce form .form-row {
+  display: block;
+}
+
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1, .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
+  max-width: unset;
 }
 
 /*# sourceMappingURL=nitke.css.map */

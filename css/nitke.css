@@ -18,16 +18,31 @@ a:-webkit-any-link {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: grey;
+  text-decoration: none;
+}
+
 body {
   display: flex;
   flex-direction: row;
   padding: 50px;
 }
+@media (min-width: 767px) {
+  body {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
 
 #primary {
   max-width: calc(100vw - 310px);
   flex: 1;
-  padding: 20px 30px 20px 40px;
+  padding: 20px 30px 20px 50px;
 }
 
 /*================
@@ -41,14 +56,26 @@ body {
   align-items: flex-start;
   padding: 0;
 }
+@media (min-width: 767px) {
+  .navbar {
+    width: 100vw;
+    height: 200px;
+  }
+}
 .navbar div {
   margin-bottom: 20px;
 }
 
 .fixed-navbar {
   position: fixed;
-  width: 210px;
+  width: 310px;
   z-index: 10;
+  left: 0;
+  top: 0;
+  padding-top: 50px;
+  padding-left: 50px;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .fixed-navbar a {
   text-decoration: none;
@@ -70,6 +97,9 @@ body {
 .fixed-navbar .navbar-nitke li.active a {
   color: #910808;
 }
+.fixed-navbar .navbar-nitke li.active ul {
+  display: block;
+}
 .fixed-navbar .navbar-nitke li a {
   text-decoration: none;
   color: #1f1f1f;
@@ -87,6 +117,12 @@ body {
 .fixed-navbar .navbar-nitke li .dropdown-menu.show {
   position: relative !important;
   display: block;
+}
+.fixed-navbar .navbar-nitke li .dropdown-menu a {
+  color: #1f1f1f;
+}
+.fixed-navbar .navbar-nitke li .dropdown-menu li.active a {
+  color: #910808;
 }
 
 [class~=menu-item-object-post]:last-of-type {
@@ -223,6 +259,7 @@ body {
 
 .gallery-nav-father {
   position: relative;
+  z-index: 100;
 }
 .gallery-nav-father .gallery-nav-container {
   position: fixed;
@@ -278,6 +315,16 @@ body {
   max-width: 100%;
   object-fit: cover;
   vertical-align: bottom;
+}
+
+/*================
+  PAGES
+================*/
+.page-main {
+  max-width: 1000px;
+}
+.page-main .entry-title {
+  margin: 30px auto 50px;
 }
 
 /*# sourceMappingURL=nitke.css.map */
