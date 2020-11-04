@@ -5,6 +5,11 @@ html {
   font-family: Arial, Helvetica, sans-serif;
   color: #1f1f1f;
 }
+@media (max-width: 767px) {
+  html {
+    overflow-x: hidden;
+  }
+}
 
 h1, h2, h3, h4 {
   color: #910808;
@@ -32,7 +37,7 @@ body {
   flex-direction: row;
   padding: 50px;
 }
-@media (min-width: 767px) {
+@media (max-width: 767px) {
   body {
     flex-direction: column;
     padding: 20px;
@@ -43,6 +48,12 @@ body {
   max-width: calc(100vw - 310px);
   flex: 1;
   padding: 20px 30px 20px 50px;
+}
+@media (max-width: 767px) {
+  #primary {
+    max-width: 100vw;
+    padding: 20px;
+  }
 }
 
 /*================
@@ -56,10 +67,9 @@ body {
   align-items: flex-start;
   padding: 0;
 }
-@media (min-width: 767px) {
+@media (max-width: 767px) {
   .navbar {
-    width: 100vw;
-    height: 200px;
+    display: none;
   }
 }
 .navbar div {
@@ -75,7 +85,16 @@ body {
   padding-top: 50px;
   padding-left: 50px;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.6);
+}
+@media (max-width: 767px) {
+  .fixed-navbar {
+    background-color: rgba(0, 0, 0, 0);
+    height: 120px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-top: 20px;
+    position: relative;
+  }
 }
 .fixed-navbar a {
   text-decoration: none;
@@ -85,6 +104,10 @@ body {
   font-size: 44px;
   margin-bottom: 30px;
   line-height: 1.3em;
+  transition: all 0.2s ease-in-out;
+}
+.fixed-navbar a .navbar_title:hover {
+  color: #B32A2A;
 }
 .fixed-navbar .navbar-nitke {
   list-style-type: none;
@@ -103,6 +126,10 @@ body {
 .fixed-navbar .navbar-nitke li a {
   text-decoration: none;
   color: #1f1f1f;
+  transition: all 0.2s ease-in-out;
+}
+.fixed-navbar .navbar-nitke li a:hover {
+  color: #B32A2A;
 }
 .fixed-navbar .navbar-nitke li .dropdown-menu {
   list-style-type: none;
@@ -120,6 +147,10 @@ body {
 }
 .fixed-navbar .navbar-nitke li .dropdown-menu a {
   color: #1f1f1f;
+  transition: all 0.2s ease-in-out;
+}
+.fixed-navbar .navbar-nitke li .dropdown-menu a:hover {
+  color: #B32A2A;
 }
 .fixed-navbar .navbar-nitke li .dropdown-menu li.active a {
   color: #910808;
@@ -145,9 +176,13 @@ body {
   z-index: 0;
 }
 
+.amazingsliderimg {
+  min-height: 100vh;
+}
+
 .amazingslider-space-1 {
-  width: 100vw !important;
-  height: 100vh !important;
+  min-width: 100vw !important;
+  min-height: 100vh !important;
 }
 
 .amazingslider-arrow-left-1, .amazingslider-arrow-right-1 {
@@ -296,18 +331,16 @@ body {
 #thumbnail-view ul {
   display: flex;
   flex-wrap: wrap;
-  margin: 1vmin;
+  width: 100%;
   list-style-type: none;
   padding: 0;
+  align-content: stretch;
 }
 #thumbnail-view ul li {
-  height: 30vh;
-  flex-grow: 1;
+  min-width: 300px;
+  flex: 1 1 30%;
   margin: 1vmin;
   cursor: pointer;
-}
-#thumbnail-view ul li:last-child {
-  flex-grow: 10;
 }
 #thumbnail-view ul li .image-thumbnail {
   max-height: 100%;
@@ -315,6 +348,26 @@ body {
   max-width: 100%;
   object-fit: cover;
   vertical-align: bottom;
+}
+
+.mob-menu-icon {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-gallery-area {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.mobile-gallery-area ul {
+  margin: 0 !important;
+}
+.mobile-gallery-area ul li {
+  margin: 20px 0 5px 0 !important;
 }
 
 /*================
@@ -325,6 +378,30 @@ body {
 }
 .page-main .entry-title {
   margin: 30px auto 50px;
+}
+
+/*================
+  WOOCOMMERCE
+================*/
+.woocommerce .woocommerce-input-wrapper {
+  width: 100%;
+  display: block;
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+  padding: 0.25rem;
+  height: 30px;
+  border: 1px solid #999 !important;
+  background: #f0f0f0;
+  border: 0;
+}
+
+.woocommerce-billing-fields .form-row, .woocommerce-shipping-fields .form-row, .woocommerce form .form-row {
+  display: block;
+}
+
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1, .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
+  max-width: unset;
 }
 
 /*# sourceMappingURL=nitke.css.map */

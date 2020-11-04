@@ -1,0 +1,31 @@
+.fixed-navbar a .navbar_title {
+  color: white;
+}
+
+.fixed-navbar .navbar-nitke li a {
+  color: rgb(172, 172, 172);
+  transition: all 0.2s ease-in-out;
+}
+
+.fixed-navbar .navbar-nitke li a:hover {
+  color: white;
+}
+
+
+.fixed-navbar .navbar-nitke li.active a {
+  color: white;
+}
+
+
+.fixed-navbar .navbar-nitke li .dropdown-menu a {
+  color: rgb(172, 172, 172);
+  transition: all 0.2s ease-in-out;
+}
+
+.fixed-navbar .navbar-nitke li .dropdown-menu a:hover {
+  color: white;
+}
+
+.fixed-navbar .navbar-nitke li .dropdown-menu li.active a {
+  color: white;
+}
