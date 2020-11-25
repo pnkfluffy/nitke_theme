@@ -69,7 +69,7 @@ function nitke_get_thumbnail()
             'post_parent' => get_the_ID(),
         )));
         $output = wp_get_attachment_url($attachments[0]->ID);
-        wp_reset_postdata();
+        // wp_reset_postdata();
     endif;
 
     return $output;
