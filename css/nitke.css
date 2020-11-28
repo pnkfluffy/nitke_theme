@@ -164,25 +164,11 @@ body {
   LANDING
 ================*/
 #wonderplugin-fullscreen-slideshow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 60vw;
+  height: 37vw;
   margin: 0;
   padding: 0;
   z-index: 0;
-}
-
-.amazingsliderimg {
-  min-height: 100vh;
-}
-
-.amazingslider-space-1 {
-  min-width: 100vw !important;
-  min-height: 100vh !important;
 }
 
 .amazingslider-arrow-left-1, .amazingslider-arrow-right-1 {
